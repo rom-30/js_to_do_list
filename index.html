@@ -15,7 +15,7 @@
 </head>
 <body>
   <div class="container">
-    <input type="text" class="textb" placeholder="Add a task">
+    <input type="text" class="text-input" placeholder="Add a task">
     <div class="not-completed">
       <h3>Not Completed</h3>
     </div>
@@ -26,10 +26,10 @@
   </div>
 
   <script type="text/javascript">
-    $(".textb").on("keyup", (event) => {
-      if(event.keyCode == 13 && $(".textb").val() != "")
+    $(".text-input").on("keyup", (event) => {
+      if(event.keyCode == 13 && $(".text-input").val() != "")
       {
-        let task = $("<div class='task'></div>").text($(".textb").val());
+        let task = $("<div class='task'></div>").text($(".text-input").val());
         let del = $("<i class='fas fa-trash'></i>").click(function(){
           let p = $(this).parent();
           p.fadeOut( function() {
@@ -48,7 +48,7 @@
         task.append(del,check);
         $(".not-completed").append(task);
 
-        $(".txtb").val("");
+        $(".text-input").val("");
       }
     });
   </script>
