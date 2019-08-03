@@ -35,7 +35,11 @@
   <script type="text/javascript">
     $(".textb").on("keyup", (event) => {
       if(event.keyCode == 13 && $(".textb").val() != "")
-      alert("ok");
+      {
+        let task = $("<div class='task'></div>").text($(".textb").val());
+        $(".not-completed").append(task);
+
+      }
     });
   </script>
 </body>
