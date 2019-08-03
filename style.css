@@ -7,4 +7,33 @@
 
 body {
   background-image: linear-gradient(145deg, #C9FFBF, #FFAFBD);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  marging: auto;
+  padding: 10px;
+}
+
+.textb {
+  width: 100%;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid #000;
+  background: none;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+.task {
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+  padding: 18px;
+  margin: 6px 0;
 }
