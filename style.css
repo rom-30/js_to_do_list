@@ -45,3 +45,7 @@ h3 {
   cursor: pointer;
 }
 
+.completed .task {
+  background: rgba(0,0,0,.5);
+  color: #fff;
+}
