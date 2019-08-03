@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>To do list</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
@@ -16,20 +19,23 @@
 <body>
   <div class="container">
     <input type="text" class="text-input" placeholder="Add a task">
-    <div class="not-completed">
-      <h3>Not Completed</h3>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 not-completed">
+        <h3>Not Completed</h3>
+      </div>
+
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 completed">
+        <h3> Completed</h3>
+      </div>
     </div>
 
-    <div class="completed">
-      <h3> Completed</h3>
-    </div>
   </div>
 
   <script type="text/javascript">
     $(".text-input").on("keyup", (event) => {
       if(event.keyCode == 13 && $(".text-input").val() != "")
       {
-        let task = $("<div class='task'></div>").text($(".text-input").val());
+        let task = $("<p class='task'></p>").text($(".text-input").val());
         let del = $("<i class='fas fa-trash'></i>").click(function(){
           let p = $(this).parent();
           p.fadeOut( function() {
