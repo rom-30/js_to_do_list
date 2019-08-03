@@ -37,7 +37,8 @@
       if(event.keyCode == 13 && $(".textb").val() != "")
       {
         let task = $("<div class='task'></div>").text($(".textb").val());
-        let del = $("<i class='fas fa-trash'></i>")
+        let del = $("<i class='fas fa-trash'></i>");
+        let check = $("<i class='fas fa-check'></i>");
         $(".not-completed").append(task);
 
         $(".txtb").val("");
