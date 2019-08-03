@@ -18,13 +18,6 @@
     <input type="text" class="textb" placeholder="Add a task">
     <div class="not-completed">
       <h3>Not Completed</h3>
-
-      <div class="task">
-        Task
-        <i class="fas fa-trash"></i>
-        <i class="fas fa-check"></i>
-      </div>
-
     </div>
 
     <div class="completed">
@@ -37,8 +30,22 @@
       if(event.keyCode == 13 && $(".textb").val() != "")
       {
         let task = $("<div class='task'></div>").text($(".textb").val());
-        let del = $("<i class='fas fa-trash'></i>");
-        let check = $("<i class='fas fa-check'></i>");
+        let del = $("<i class='fas fa-trash'></i>").click(function(){
+          let p = $(this).parent();
+          p.fadeOut( function() {
+            p.remove();
+          });
+        });
+        let check = $("<i class='fas fa-check'></i>").click(function(){
+          let p = $(this).parent();
+          p.fadeOut( function() {
+            $(".completed").append(p);
+            p.fadeIn();
+          });
+          $(this).remove();
+        });
+
+        task.append(del,check);
         $(".not-completed").append(task);
 
         $(".txtb").val("");
